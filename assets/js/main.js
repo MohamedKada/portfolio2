@@ -76,4 +76,74 @@ document.addEventListener('DOMContentLoaded', () => {
             // alert('Votre message a été envoyé. Merci !');
         });
     }
+});
+
+// Fonctions améliorées pour gérer les modals
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    
+    // Préparer la modal avec une opacité de 0
+    modal.style.display = "block";
+    modal.style.opacity = "0";
+    
+    // Empêcher le défilement
+    document.body.style.overflow = "hidden";
+    
+    // Animation d'entrée
+    setTimeout(() => {
+        modal.style.opacity = "1";
+        modal.style.transition = "opacity 0.3s ease";
+    }, 10);
+    
+    // Focus sur la modal pour l'accessibilité
+    modal.querySelector('.modal-content').focus();
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    
+    // Animation de sortie
+    modal.style.opacity = "0";
+    modal.style.transition = "opacity 0.3s ease";
+    
+    // Attendre la fin de l'animation avant de cacher la modal
+    setTimeout(() => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }, 300);
+}
+
+// Fermer la modal si l'utilisateur clique en dehors
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        const modalId = event.target.id;
+        closeModal(modalId);
+    }
+}
+
+// Fermer la modal avec la touche Échap
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (getComputedStyle(modals[i]).display === "block") {
+                closeModal(modals[i].id);
+            }
+        }
+    }
+});
+
+// Ajouter des effets de survol aux cartes de projet
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.querySelector('.btn').classList.add('pulse');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.querySelector('.btn').classList.remove('pulse');
+        });
+    });
 }); 
