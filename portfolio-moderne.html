@@ -265,7 +265,7 @@
                 <h2>Mes Projets</h2>
                 <div class="projects-container">
                     <!-- Projet 1 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('projet1')">
                         <div class="project-img">
                             <img src="assets/img/projets/calculatrice.png" alt="Calculatrice PHP">
                         </div>
@@ -281,12 +281,11 @@
                                 <a href="docs/calculatrice.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                                 <a href="https://github.com/yourusername/calculatrice-php" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
-                            <button onclick="openModal('projet1')" class="btn btn-outline">Voir le projet</button>
                         </div>
                     </div>
                     
                     <!-- Projet 2 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('projet2')">
                         <div class="project-img">
                             <img src="assets/img/projets/generateur.png" alt="Générateur de mot de passe">
                         </div>
@@ -303,12 +302,11 @@
                                 <a href="docs/generateur.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                                 <a href="https://github.com/yourusername/generateur-mdp" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
-                            <button onclick="openModal('projet2')" class="btn btn-outline">Voir le projet</button>
                         </div>
                     </div>
                     
                     <!-- Projet 3 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('projet3')">
                         <div class="project-img">
                             <img src="assets/img/projets/location.png" alt="TP Location">
                         </div>
@@ -325,7 +323,6 @@
                                 <a href="docs/location.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                                 <a href="https://github.com/yourusername/tp-location" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
-                            <button onclick="openModal('projet3')" class="btn btn-outline">Voir le projet</button>
                         </div>
                     </div>
                 </div>
@@ -417,7 +414,7 @@
         <!-- MODALES DES PROJETS -->
         <!-- Modal Projet 1 -->
         <div id="projet1" class="modal">
-            <div class="modal-content">
+            <div class="modal-content modal-smaller">
                 <span class="close-modal" onclick="closeModal('projet1')">&times;</span>
                 <div class="modal-header">
                     <h2>Calculatrice PHP</h2>
@@ -464,7 +461,7 @@
 
         <!-- Modal Projet 2 -->
         <div id="projet2" class="modal">
-            <div class="modal-content">
+            <div class="modal-content modal-smaller">
                 <span class="close-modal" onclick="closeModal('projet2')">&times;</span>
                 <div class="modal-header">
                     <h2>Générateur de mot de passe</h2>
@@ -512,7 +509,7 @@
 
         <!-- Modal Projet 3 -->
         <div id="projet3" class="modal">
-            <div class="modal-content">
+            <div class="modal-content modal-smaller">
                 <span class="close-modal" onclick="closeModal('projet3')">&times;</span>
                 <div class="modal-header">
                     <h2>TP Location</h2>
@@ -644,6 +641,20 @@
                 });
             });
 
+            // Ajouter un style pour indiquer que les cartes de projet sont cliquables
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.style.cursor = 'pointer';
+                
+                // Empêcher que le clic sur les liens à l'intérieur des cartes ouvre la modale
+                const links = card.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
+                });
+            });
+
             // Gestion des modales
             window.openModal = function(modalId) {
                 const modal = document.getElementById(modalId);
@@ -688,6 +699,24 @@
             });
         });
     </script>
+    <style>
+        /* Style pour réduire la taille des modales */
+        .modal-smaller {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        /* Style pour indiquer que les cartes de projet sont cliquables */
+        .project-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     <script src="assets/js/contact.js"></script>
 </body>
 </html> 
