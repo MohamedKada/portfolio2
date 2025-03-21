@@ -18,6 +18,46 @@
     
     <!-- Feuille de style moderne personnalisée -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Style pour les infobulles personnalisées */
+        .competence-item {
+            position: relative;
+        }
+        
+        .competence-item .tooltip {
+            visibility: hidden;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+        
+        .competence-item .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+        }
+        
+        .competence-item:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,7 +67,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#apropos">À propos</a></li>
-                <li><a href="#e4">E4 BTS</a></li>
+                <li><a href="#e5">E5 BTS</a></li>
                 <li><a href="#parcours">Parcours</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
@@ -92,59 +132,59 @@
             </div>
         </section>
 
-        <!-- E4 SECTION -->
-        <section id="e4" class="section">
+        <!-- E5 SECTION -->
+        <section id="e5" class="section">
             <div class="container" data-aos="fade-up">
                 <h2>E5</h2>
                 <p class="section-subtitle">Mon épreuve E5 BTS SIO</p>
                 
-                <div class="e4-presentation">
+                <div class="e5-presentation">
                     <p>L'épreuve E5 du BTS SIO (Services Informatiques aux Organisations) est une épreuve professionnelle qui consiste à présenter des situations professionnelles réalisées en entreprise lors de mes périodes de stage.</p>
                     
                     <h3>Objectifs de l'épreuve :</h3>
-                    <ul class="e4-objectives">
+                    <ul class="e5-objectives">
                         <li><span class="bullet"></span>Présenter et analyser des situations professionnelles vécues</li>
                         <li><span class="bullet"></span>Démontrer l'acquisition de compétences techniques</li>
                         <li><span class="bullet"></span>Mettre en évidence ma capacité à m'intégrer dans un environnement professionnel</li>
                         <li><span class="bullet"></span>Valoriser mes compétences en communication et en gestion de projet</li>
                     </ul>
                     
-                    <div class="e4-grid">
-                        <div class="e4-card">
-                            <div class="e4-card-icon">
+                    <div class="e5-grid">
+                        <div class="e5-card">
+                            <div class="e5-card-icon">
                                 <i class="fas fa-building"></i>
                             </div>
-                            <div class="e4-card-content">
+                            <div class="e5-card-content">
                                 <h3>Stage en entreprise</h3>
                                 <p>J'ai effectué mon stage chez Cyber Avenir, où j'ai pu participer à plusieurs projets.</p>
                             </div>
                         </div>
                         
-                        <div class="e4-card">
-                            <div class="e4-card-icon">
+                        <div class="e5-card">
+                            <div class="e5-card-icon">
                                 <i class="fas fa-code"></i>
                             </div>
-                            <div class="e4-card-content">
+                            <div class="e5-card-content">
                                 <h3>Projets réalisés</h3>
                                 <p>Durant cette période, j'ai principalement participé à la réalisation d'un site web, fait de la sensibilisation sur la cybersécurité et participé à des évènements.</p>
                             </div>
                         </div>
                         
-                        <div class="e4-card">
-                            <div class="e4-card-icon">
+                        <div class="e5-card">
+                            <div class="e5-card-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
-                            <div class="e4-card-content">
+                            <div class="e5-card-content">
                                 <h3>Compétences développées</h3>
                                 <p>Ces expériences m'ont permis de renforcer mes compétences techniques en développement web surtout en HTML, CSS et PHP.</p>
                             </div>
                         </div>
                         
-                        <div class="e4-card">
-                            <div class="e4-card-icon">
+                        <div class="e5-card">
+                            <div class="e5-card-icon">
                                 <i class="fas fa-file-alt"></i>
                             </div>
-                            <div class="e4-card-content">
+                            <div class="e5-card-content">
                                 <h3>Documentation</h3>
                                 <p>Vous pouvez consulter mon rapport de stage et les documents relatifs à mon épreuve E5 en utilisant le lien ci-dessous.</p>
                                 <a href="assets/docs/E5.pdf" class="btn-download"><i class="fas fa-download"></i> Télécharger le dossier E5</a>
@@ -246,26 +286,32 @@
                             <div class="competence-item">
                                 <i class="fab fa-html5 fa-3x" style="color: #e34c26;"></i>
                                 <p>HTML</p>
+                                <span class="tooltip">HTML5 - Langage de balisage utilisé pour structurer le contenu web</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-css3-alt fa-3x" style="color: #264de4;"></i>
                                 <p>CSS</p>
+                                <span class="tooltip">CSS3 - Langage de style utilisé pour la mise en forme des pages web</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-php fa-3x" style="color: #777bb3;"></i>
                                 <p>PHP</p>
+                                <span class="tooltip">PHP - Langage de programmation orienté serveur pour le développement web dynamique</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-python fa-3x" style="color: #306998;"></i>
                                 <p>Python</p>
+                                <span class="tooltip">Python - Langage de programmation polyvalent, idéal pour le développement rapide et l'analyse de données</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-java fa-3x" style="color: #5382a1;"></i>
                                 <p>Java</p>
+                                <span class="tooltip">Java - Langage de programmation orienté objet utilisé pour les applications d'entreprise</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-microsoft fa-3x" style="color: #512bd4;"></i>
                                 <p>C#</p>
+                                <span class="tooltip">C# - Langage de programmation moderne développé par Microsoft pour le framework .NET</span>
                             </div>
                         </div>
                     </div>
@@ -277,26 +323,32 @@
                             <div class="competence-item">
                                 <i class="fab fa-git-alt fa-3x" style="color: #f05032;"></i>
                                 <p>Git</p>
+                                <span class="tooltip">Git - Système de contrôle de version distribué pour suivre les changements de code</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fab fa-github fa-3x" style="color: #24292e;"></i>
                                 <p>GitHub</p>
+                                <span class="tooltip">GitHub - Plateforme de développement collaboratif basée sur Git</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fas fa-code fa-3x" style="color: #0078d7;"></i>
                                 <p>VS Code</p>
+                                <span class="tooltip">VS Code - Éditeur de code source développé par Microsoft</span>
                             </div>
                             <div class="competence-item">
-                                <i class="fas fa-moon fa-3x" style="color: #2c2255;"></i>
+                                <i class="fab fa-java fa-3x" style="color: #2c2255;"></i>
                                 <p>Eclipse</p>
+                                <span class="tooltip">Eclipse - Environnement de développement intégré (IDE) pour Java</span>
                             </div>
                             <div class="competence-item">
-                                <i class="fas fa-laptop-code fa-3x" style="color: #fa6423;"></i>
+                                <i class="fab fa-java fa-3x" style="color: #fa6423;"></i>
                                 <p>IntelliJ</p>
+                                <span class="tooltip">IntelliJ - IDE pour Java développé par JetBrains, avec support avancé pour de nombreux langages</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fas fa-terminal fa-3x" style="color: #333;"></i>
                                 <p>Cursor</p>
+                                <span class="tooltip">Cursor - Éditeur de texte moderne optimisé pour le développement avec l'IA</span>
                             </div>
                         </div>
                     </div>
@@ -308,14 +360,17 @@
                             <div class="competence-item">
                                 <i class="fab fa-laravel fa-3x" style="color: #ff2d20;"></i>
                                 <p>Laravel</p>
+                                <span class="tooltip">Laravel - Framework PHP élégant et robuste pour le développement web</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fas fa-database fa-3x" style="color: #00758f;"></i>
                                 <p>MySQL</p>
+                                <span class="tooltip">MySQL - Système de gestion de base de données relationnelle open-source</span>
                             </div>
                             <div class="competence-item">
                                 <i class="fas fa-diagram-project fa-3x" style="color: #666;"></i>
                                 <p>Merise</p>
+                                <span class="tooltip">Merise - Méthode d'analyse et de conception pour les systèmes d'information</span>
                             </div>
                         </div>
                     </div>
@@ -328,7 +383,7 @@
             <div class="container" data-aos="fade-up">
                 <h2>Mes Projets</h2>
                 <div class="projects-container">
-                    <!-- Projet 1 -->
+                    <!-- Projet 1 Calculatrice PHP-->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('projet1')">
                         <div class="project-img">
                             <img src="assets/img/projets/calculatrice.png" alt="Calculatrice PHP">
@@ -342,13 +397,13 @@
                                 <span>CSS</span>
                             </div>
                             <div class="project-links">
-                                <a href="docs/calculatrice.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
-                                <a href="https://github.com/yourusername/calculatrice-php" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="assets/docs/calculatrice.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="https://github.com/MohamedKada/CalculatricePHP" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Projet 2 -->
+                    <!-- Projet 2 Générateur de mot de passe -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('projet2')">
                         <div class="project-img">
                             <img src="assets/img/projets/generateur.png" alt="Générateur de mot de passe">
@@ -363,13 +418,13 @@
                                 <span>JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a href="docs/generateur.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
-                                <a href="https://github.com/yourusername/generateur-mdp" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="assets/docs/generateur.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="https://github.com/MohamedKada/Generateur" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Projet 3 -->
+                    <!-- Projet 3 TP Location -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('projet3')">
                         <div class="project-img">
                             <img src="assets/img/projets/location.png" alt="TP Location">
@@ -384,13 +439,13 @@
                                 <span>Bootstrap</span>
                             </div>
                             <div class="project-links">
-                                <a href="docs/location.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
-                                <a href="https://github.com/yourusername/tp-location" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="assets/docs/location.pdf" target="_blank" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="https://github.com/MohamedKada/Location" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Projet TP Seven -->
+                    <!-- Projet 4 TP Seven -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('projetSeven')">
                         <div class="project-img">
                             <img src="assets/img/projets/tp-seven.png" alt="TP Seven">
@@ -404,12 +459,12 @@
                                 <span>Administration système</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="assets/docs/tp-seven.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Projet TP Devis -->
+                    <!-- Projet 5 TP Devis -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('projetDevis')">
                         <div class="project-img">
                             <img src="assets/img/projets/tp-devis.png" alt="TP Devis">
@@ -423,12 +478,12 @@
                                 <span>Google Shopping</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="assets/docs/tp-devis.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Projet AP Personnel -->
+                    <!-- Projet 6 AP Personnel -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('projetAPPersonnel')">
                         <div class="project-img">
                             <img src="assets/img/projets/ap-personnel.png" alt="AP Personnel">
@@ -442,8 +497,8 @@
                                 <span>MySQL</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
-                                <a href="https://github.com/yourusername/ap-personnel" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="assets/docs/ap-personnel.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="https://github.com/Kadeyofficiel/Personnelbis" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -464,8 +519,8 @@
                                 <span>Laravel</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
-                                <a href="https://github.com/yourusername/ap-parking" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="assets/docs/ap-parking.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="https://github.com/Kadeyofficiel/Parking" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -482,7 +537,7 @@
                                 <span>À compléter</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="assets/docs/stage-1.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                             </div>
                         </div>
                     </div>
@@ -499,7 +554,7 @@
                                 <span>À compléter</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
+                                <a href="assets/docs/stage-2.pdf" class="link-doc"><i class="fas fa-file-pdf"></i> Documentation</a>
                             </div>
                         </div>
                     </div>
@@ -579,38 +634,38 @@
                     <div class="veille-articles-grid">
                         <!-- Article 1 -->
                         <div class="veille-article" data-aos="fade-up" data-aos-delay="100">
-                            <div class="veille-article-date">15 Mars 2024</div>
-                            <h4>L'IA générative et les risques de phishing nouvelle génération</h4>
-                            <p>Les modèles d'IA générative comme GPT-4 permettent désormais de créer des emails de phishing ultra-personnalisés et indétectables par les filtres traditionnels, augmentant le taux de réussite des attaques.</p>
-                            <div class="veille-article-source">Source: ANSSI</div>
-                            <a href="https://www.ssi.gouv.fr/publication/risques-et-contre-mesures-face-a-des-outils-de-generation-de-texte/" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                            <div class="veille-article-date">20 Mars 2025</div>
+                            <h4>Les PME et ETI sont de plus en plus vulnérables à la fraude au faux virement</h4>
+                            <p>La start-up Stoïk, qui conçoit plusieurs produits d'assurance cyber pour les PME et ETI, a publié son rapport annuel sur la sinistralité de ses 5000 assurés. Si le taux d'attaques par ransomware a diminué par rapport à 2023, les cas de fraude au virement bancaire sont en forte hausse, avec une perte financière moyenne de 55 000 euros par structure.</p>
+                            <div class="veille-article-source">Source: L'Usine Digitale</div>
+                            <a href="https://www.usine-digitale.fr/article/cybersecurite-les-pme-et-eti-sont-de-plus-en-plus-vulnerables-a-la-fraude-au-faux-virement.N2229248" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
                         <!-- Article 2 -->
                         <div class="veille-article" data-aos="fade-up" data-aos-delay="200">
-                            <div class="veille-article-date">28 Février 2024</div>
+                            <div class="veille-article-date">20 Mars 2025</div>
                             <h4>Deepfakes en entreprise : nouvelle menace pour l'authentification vocale</h4>
                             <p>Une entreprise britannique a été victime d'une fraude après qu'un deepfake vocal convaincant du PDG a été utilisé pour autoriser un virement de plusieurs millions d'euros.</p>
                             <div class="veille-article-source">Source: Cyberdefense Magazine</div>
-                            <a href="https://www.cyberdefensemagazine.com/voice-deepfake-used-to-steal-millions/" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://www.cyberdefensemagazine.com/deepfakes-how-deep-can-they-go/" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
                         <!-- Article 3 -->
                         <div class="veille-article" data-aos="fade-up" data-aos-delay="300">
-                            <div class="veille-article-date">10 Février 2024</div>
+                            <div class="veille-article-date">04 Décembre 2024</div>
                             <h4>Microsoft déploie Copilot Security, un assistant IA pour les responsables cybersécurité</h4>
                             <p>L'outil prometteur de Microsoft utilise l'intelligence artificielle pour analyser les menaces, suggérer des réponses aux incidents et automatiser certaines tâches de sécurité de routine.</p>
                             <div class="veille-article-source">Source: ZDNet Security</div>
-                            <a href="https://www.zdnet.fr/actualites/microsoft-security-copilot-comment-l-ia-va-ameliorer-la-cybersecurite-39960818.htm" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://squad.fr/fr/news/2024/12/04/le-deploiement-de-copilot-security/#:~:text=Qu'est%2Dce%20que%20Copilot,machine%20et%20%C3%A0%20l'%C3%A9chelle." target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
                         <!-- Article 4 -->
                         <div class="veille-article" data-aos="fade-up" data-aos-delay="400">
-                            <div class="veille-article-date">24 Janvier 2024</div>
+                            <div class="veille-article-date">01 Février 2024</div>
                             <h4>L'UE publie les premiers standards de certification pour les systèmes d'IA en cybersécurité</h4>
                             <p>Le nouveau cadre réglementaire européen impose des tests rigoureux pour les systèmes d'IA utilisés dans des contextes sensibles de cybersécurité, notamment les systèmes de détection d'intrusion.</p>
                             <div class="veille-article-source">Source: ENISA</div>
-                            <a href="https://www.enisa.europa.eu/news/artificial-intelligence-and-cybersecurity-standardisation" target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://cyber.gouv.fr/actualites/eucc-premier-schema-europeen-de-certification-de-cybersecurite-adopte#:~:text=EUCC%2C%20premier%20sch%C3%A9ma%20europ%C3%A9en%20de%20certification%20de%20cybers%C3%A9curit%C3%A9%20adopt%C3%A9,-La%20Commission%20Europ%C3%A9enne&text=Ce%20mercredi%2031%20janvier%202024,europ%C3%A9ennes%20en%20mati%C3%A8re%20de%20cybers%C3%A9curit%C3%A9." target="_blank" class="veille-article-link">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -624,7 +679,6 @@
                         <li>Rester informé des bonnes pratiques et des évolutions réglementaires</li>
                         <li>Développer une expertise sur un sujet d'avenir dans le domaine de la sécurité informatique</li>
                     </ul>
-                    <a href="assets/docs/veille-cybersecurite-ia.pdf" class="btn-download" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-download"></i> Télécharger mon dossier de veille complet</a>
                 </div>
             </div>
         </section>
@@ -1099,7 +1153,7 @@
                     <h3>Navigation</h3>
                     <ul>
                         <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#e4">E4 BTS</a></li>
+                        <li><a href="#e5">E5 BTS</a></li>
                         <li><a href="#parcours">Parcours</a></li>
                         <li><a href="#competences">Compétences</a></li>
                         <li><a href="#projets">Projets</a></li>

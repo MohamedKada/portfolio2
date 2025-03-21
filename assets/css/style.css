@@ -1379,12 +1379,14 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  height: 300px;
 }
 
 .modal-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #f5f5f5;
 }
 
 .modal-description {
@@ -1454,7 +1456,7 @@ footer {
   }
 }
 
-/* E4 SECTION */
+/* E5 SECTION */
 .section-subtitle {
   color: var(--text-light);
   font-size: 1.2rem;
@@ -1463,45 +1465,45 @@ footer {
   text-align: center;
 }
 
-.e4-presentation {
+.e5-presentation {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.e4-objectives {
+.e5-objectives {
   margin: 2rem 0;
   padding-left: 1rem;
 }
 
-.e4-objectives li {
+.e5-objectives li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.8rem;
   list-style-type: none;
 }
 
-.e4-objectives li .bullet {
+.e5-objectives li .bullet {
   position: absolute;
   left: 0;
-  color: var(--primary);
+  color: var(--primary-color);
   content: "•";
 }
 
-.e4-objectives li::before {
+.e5-objectives li::before {
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--primary);
+  color: var(--primary-color);
 }
 
-.e4-grid {
+.e5-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
 
-.e4-card {
+.e5-card {
   background-color: var(--card-bg);
   border-radius: 10px;
   padding: 2rem;
@@ -1513,16 +1515,16 @@ footer {
   transition: var(--transition);
 }
 
-.e4-card:hover {
+.e5-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.e4-card-icon {
+.e5-card-icon {
   flex: 0 0 60px;
   height: 60px;
   background: rgba(100, 181, 246, 0.2);
-  color: var(--primary);
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1530,11 +1532,11 @@ footer {
   font-size: 1.5rem;
 }
 
-.e4-card-content {
+.e5-card-content {
   flex: 1;
 }
 
-.e4-card-content h3 {
+.e5-card-content h3 {
   color: var(--text-color);
   margin-bottom: 1rem;
   font-size: 1.3rem;
@@ -1545,7 +1547,7 @@ footer {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--bg-accent);
-  color: var(--primary);
+  color: var(--primary-color);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   margin-top: 1rem;
@@ -1554,22 +1556,22 @@ footer {
 }
 
 .btn-download:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: var(--light);
 }
 
 @media (max-width: 992px) {
-  .e4-grid {
+  .e5-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 576px) {
-  .e4-card {
+  .e5-card {
     flex-direction: column;
   }
-
-  .e4-card-icon {
+  
+  .e5-card-icon {
     margin-bottom: 1rem;
   }
 } 
